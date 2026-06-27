@@ -1,0 +1,17 @@
+/* HUD DA BARRA DE HP E BOTÕES ELEMENTAIS */
+.hp-bloco { margin-bottom: 25px; }
+.label { font-size: 10px; color: #64748b; letter-spacing: 1px; display: block; margin-bottom: 6px; }
+.barra-vida-fundo { height: 10px; background: #1e1e24; border-radius: 5px; overflow: hidden; border: 1px solid #2d2d38; }
+#barra-hp { height: 100%; background: linear-gradient(90deg, #00ff87 0%, #60efff 100%); transition: width 0.3s ease; }
+.valores { font-size: 11px; color: #94a3b8; display: block; margin-top: 5px; text-align: right; }
+
+.acoes-luta { display: flex; flex-direction: column; gap: 12px; }
+.btn-acao {
+    background: #111424; border: 1px solid rgba(255,255,255,0.1); color: #fff; padding: 14px;
+    border-radius: 10px; font-family: 'Orbitron', sans-serif; font-weight: 700; cursor: pointer; transition: all 0.2s;
+}
+.btn-acao:hover { background: #fff; color: #000; transform: translateY(-2px); }
+.btn-acao.especial { border-color: #ffd700; background: linear-gradient(135deg, #1f1700 0%, #000000 100%); color: #ffd700; }
+.btn-acao.especial:hover { background: #ffd700; color: #000; box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+
+#flash-combate { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 10000; transition: background 0.1s ease; }

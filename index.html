@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Legends Arena Ultra-HD</title>
+    
+    <!-- CONEXÃO DE ESTILOS MODULARES (LADO A LADO) -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/battle.css">
+    <link rel="stylesheet" href="css/particles.css">
+</head>
+<body>
+    <!-- Moldura de Efeitos Especiais (Neon, Chamas, Raios) -->
+    <div id="moldura-especial" class="borda-padrao"></div>
+    <div id="flash-combate"></div>
+
+    <div class="jogo-container">
+        <!-- PAINEL ESQUERDO: SELEÇÃO DE LENDÁRIOS -->
+        <aside class="menu-lateral">
+            <div class="menu-topo">
+                <h2>💎 ARENA LENDÁRIA</h2>
+                <p>Passe o mouse para invocar</p>
+            </div>
+            <ul class="lista-pokemons">
+                <li class="poke-item" data-id="charizard-x">🔥 Mega Charizard X</li>
+                <li class="poke-item" data-id="rayquaza">🐉 Mega Rayquaza Shiny</li>
+                <li class="poke-item" data-id="greninja">🥷 Greninja (Ash Form)</li>
+                <li class="poke-item" data-id="pikachu">⚡ Pikachu Gigantamax</li>
+                <li class="poke-item" data-id="groudon">🌋 Groudon Primal</li>
+                <li class="poke-item" data-id="kyogre">🌊 Kyogre Primal</li>
+            </ul>
+        </aside>
+
+        <!-- DIREITA: ARENA CINEMATOGRÁFICA INTERATIVA -->
+        <main class="arena-visual" id="cenario-ambiente">
+            <div class="particulas-container" id="particulas-fundo"></div>
+
+            <div class="hud-jogo">
+                <!-- Painel da Pokédex -->
+                <div class="pokedex-card">
+                    <div class="topo-card">
+                        <h1 id="p-nome">Selecione um Pokémon</h1>
+                        <span id="p-tipo" class="badge">---</span>
+                    </div>
+
+                    <!-- Sistema de Vida (HP) -->
+                    <div class="combate-status">
+                        <div class="hp-bloco">
+                            <span class="label">HP DO ALIADO</span>
+                            <div class="barra-vida-fundo">
+                                <div id="barra-hp" style="width: 100%;"></div>
+                            </div>
+                            <span id="texto-hp" class="valores">100/100</span>
+                        </div>
+                    </div>
+
+                    <!-- Ficha Técnica Avançada -->
+                    <div class="pokedex-dados">
+                        <div class="dado"><span>ALTURA</span><strong id="p-altura">-</strong></div>
+                        <div class="dado"><span>PESO</span><strong id="p-peso">-</strong></div>
+                        <div class="dado"><span>ATAQUE</span><strong id="p-atk">-</strong></div>
+                        <div class="dado"><span>DEFESA</span><strong id="p-def">-</strong></div>
+                    </div>
+
+                    <p id="p-lore" class="pokedex-historia">Passe o cursor sobre os nomes à esquerda para carregar a simulação e renderizar a criatura em tempo real.</p>
+
+                    <!-- Painel de Golpes de Combate -->
+                    <div class="acoes-luta">
+                        <button class="btn-acao" onclick="executarGol(1)" id="atk-1">Habilidade 1</button>
+                        <button class="btn-acao" onclick="executarGol(2)" id="atk-2">Habilidade 2</button>
+                        <button class="btn-acao especial" onclick="executarGol(3)" id="atk-esp">Poder Supremo</button>
+                    </div>
+                </div>
+
+                <!-- Display do Sprite Flutuante -->
+                <div class="view-pokemon">
+                    <img id="modelo-pokemon" src="" alt="" class="escondido">
+                    <div id="aviso-tela">AGUARDANDO INVOCAÇÃO...</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- CONEXÃO DE SCRIPTS INTERNOS ORDENADOS -->
+    <script src="js/pokemonDatabase.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/battle.js"></script>
+    
+    <!-- CARREGAMENTO DOS SCRIPTS DE EFEITOS DINÂMICOS -->
+    <script src="js/effects/fire.js"></script>
+    <script src="js/effects/electric.js"></script>
+    
+    <!-- ORQUESTRADOR CENTRAL -->
+    <script src="js/app.js"></script>
+</body>
+</html>
